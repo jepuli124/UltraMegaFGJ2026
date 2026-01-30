@@ -20,20 +20,20 @@ func _input(event: InputEvent) -> void:
 		Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
 
 	if event is InputEventMouseMotion and Input.mouse_mode == Input.MOUSE_MODE_CAPTURED:
-		$Camera.rotate_y(-event.relative.x * _mouse_sens_adjusted)
+		rotate_y(-event.relative.x * _mouse_sens_adjusted)
 		$Camera.rotate_x(-event.relative.y * _mouse_sens_adjusted)
-		$Camera.rotation.x = clampf($Head.rotation.x, -deg_to_rad(DOWN_ELEVATION), deg_to_rad(UP_ELEVATION))
+		$Camera.rotation.x = clampf($Camera.rotation.x, -deg_to_rad(DOWN_ELEVATION), deg_to_rad(UP_ELEVATION))
 
 	if event.is_action_pressed("E"):
 		print("EEEEEEEEE")
 		interact_with()
-	
+
 	if event.is_action_pressed("LMB"):
 		print("Left")
-		pass
+		
 	if event.is_action_pressed("RMB"):
 		print("Right")
-		pass
+		
 
 func interact_with() -> void:
 	pass
