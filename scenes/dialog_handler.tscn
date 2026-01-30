@@ -11,6 +11,22 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_wfo4w")
 
+[node name="ColorRect2" type="ColorRect" parent="." unique_id=1293515390]
+layout_mode = 0
+offset_left = 650.0
+offset_top = 729.0
+offset_right = 1273.0
+offset_bottom = 972.0
+color = Color(0, 0, 0, 0.74509805)
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=726745443]
+layout_mode = 0
+offset_left = 640.0
+offset_top = 721.0
+offset_right = 1280.0
+offset_bottom = 981.0
+color = Color(0.73432535, 0.75891423, 0.77184945, 0.1882353)
+
 [node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=765338735]
 layout_mode = 0
 offset_left = 640.0
@@ -24,11 +40,8 @@ layout_mode = 2
 theme_override_font_sizes/font_size = 32
 text = "text box"
 horizontal_alignment = 1
+autowrap_mode = 3
 uppercase = true
-
-[node name="ColorRect" type="ColorRect" parent="VBoxContainer" unique_id=726745443]
-layout_mode = 2
-color = Color(0.16470589, 1, 1, 1)
 
 [node name="Timer" type="Timer" parent="." unique_id=1041607669]
 one_shot = true
