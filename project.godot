@@ -14,11 +14,30 @@ config/name="UltraMegaFGJ2026"
 config/features=PackedStringArray("4.6", "Forward Plus")
 config/icon="res://icon.svg"
 
+[autoload]
+
+Globals="*uid://cged6ec3303q4"
+
 [display]
 
 window/size/viewport_width=1920
 window/size/viewport_height=1080
 window/size/mode=3
+
+[input]
+
+LMB={
+"deadzone": 0.2,
+"events": []
+}
+RMB={
+"deadzone": 0.2,
+"events": []
+}
+E={
+"deadzone": 0.2,
+"events": []
+}
 
 [physics]
 
