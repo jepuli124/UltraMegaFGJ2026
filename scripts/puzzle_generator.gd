@@ -1,11 +1,24 @@
 extends Node
 
-const NUMBER_OF_COLOURS = 4
+const NUMBER_OF_COLOURS = 11
 const NUMBER_OF_MESSAGES_PER_CHARACTER = 2
 const NUMBER_OF_INNOCENTS_PER_TRAVEL_GROUP = 2
 
-# placeholder of an actual global because I can't be bothered
-const COLOURS = ["red", "green", "blue", "yellow"]
+const COLOURS = [
+	"blue tentacle",
+	"plant",
+	"pink",
+	"spider",
+	"fire and ice",
+	"golden tentacle",
+	"golden",
+	"clown",
+	"tridents",
+	"white",
+	"emeraldes"
+	]
+
+	
 
 static var TARGET_REFERENCE_METHODS = [
 	{"formatter": func (list_of_characters_in_order, source_index, target_index):

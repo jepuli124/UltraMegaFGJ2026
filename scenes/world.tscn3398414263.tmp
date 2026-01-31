@@ -4,7 +4,15 @@
 [ext_resource type="PackedScene" uid="uid://bagq2w31y1q7j" path="res://scenes/room.tscn" id="1_rwgxs"]
 [ext_resource type="PackedScene" uid="uid://dikugovttssoa" path="res://scenes/player.tscn" id="2_4wyf3"]
 [ext_resource type="PackedScene" uid="uid://dmu3p8dtw8uwl" path="res://scenes/guest.tscn" id="3_4wyf3"]
+[ext_resource type="Texture2D" uid="uid://cu1emvjqbd5gl" path="res://assets/Sprites/Character/Female1.png" id="5_o8fc1"]
 [ext_resource type="PackedScene" uid="uid://5uglku51lecu" path="res://scenes/dialog_handler.tscn" id="6_qfnet"]
+[ext_resource type="Texture2D" uid="uid://c2iwddh2h8me2" path="res://assets/Sprites/Masks/Mask1.png" id="6_xo05s"]
+[ext_resource type="Texture2D" uid="uid://0t5valnwtthx" path="res://assets/Sprites/Character/Female2.png" id="7_dss4m"]
+[ext_resource type="Texture2D" uid="uid://wbl1s5vet4q7" path="res://assets/Sprites/Masks/Mask2.png" id="8_7t5mc"]
+[ext_resource type="Texture2D" uid="uid://dequqg4tdvajt" path="res://assets/Sprites/Character/Female3.png" id="9_lakw3"]
+[ext_resource type="Texture2D" uid="uid://cln18wm4860tj" path="res://assets/Sprites/Masks/Mask3.png" id="10_pm21f"]
+[ext_resource type="Texture2D" uid="uid://cfmabcnywao2j" path="res://assets/Sprites/Character/Female4.png" id="11_2lf6f"]
+[ext_resource type="Texture2D" uid="uid://c8qarf2n61cjk" path="res://assets/Sprites/Masks/Mask4.png" id="12_7iits"]
 [ext_resource type="PackedScene" uid="uid://bl7k36adj6efr" path="res://scenes/table_candle.tscn" id="15_xo05s"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_k0juu"]
@@ -44,18 +52,26 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.051639274, 1.9514319, 3.38
 
 [node name="Guest2" parent="Guests" unique_id=1567947846 node_paths=PackedStringArray("target") instance=ExtResource("3_4wyf3")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.341358, 1.5632341, -2.4883857)
+BodyTexture = ExtResource("5_o8fc1")
+MaskTexture = ExtResource("6_xo05s")
 target = NodePath("../../Player")
 
 [node name="Guest" parent="Guests" unique_id=609518711 node_paths=PackedStringArray("target") instance=ExtResource("3_4wyf3")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.6070392, 1.6688436, -0.96536314)
+BodyTexture = ExtResource("7_dss4m")
+MaskTexture = ExtResource("8_7t5mc")
 target = NodePath("../../Player")
 
 [node name="Guest3" parent="Guests" unique_id=1867495752 node_paths=PackedStringArray("target") instance=ExtResource("3_4wyf3")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.7286716, 1.5879457, 0.3757019)
+BodyTexture = ExtResource("9_lakw3")
+MaskTexture = ExtResource("10_pm21f")
 target = NodePath("../../Player")
 
 [node name="Guest4" parent="Guests" unique_id=1348025385 node_paths=PackedStringArray("target") instance=ExtResource("3_4wyf3")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.7427213, 1.6059232, 1.7887505)
+BodyTexture = ExtResource("11_2lf6f")
+MaskTexture = ExtResource("12_7iits")
 target = NodePath("../../Player")
 
 [node name="Guest5" parent="Guests" unique_id=998344899 node_paths=PackedStringArray("target") instance=ExtResource("3_4wyf3")]
