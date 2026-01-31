@@ -9,7 +9,7 @@ var _generated_list_of_characters : Array
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	_generated_list_of_characters = PuzzleGenerator.generate_puzzle(8, 2)
+	_generated_list_of_characters = PuzzleGenerator.generate_puzzle(8, Globals.current_level)
 	_set_characters()
 
 

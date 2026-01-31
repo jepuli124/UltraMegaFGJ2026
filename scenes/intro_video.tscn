@@ -1,0 +1,25 @@
+[gd_scene format=3 uid="uid://cra0caqvrfvpl"]
+
+[ext_resource type="Script" uid="uid://ck6j4vrqs8gsj" path="res://scripts/intro_video.gd" id="1_5o2u3"]
+[ext_resource type="VideoStream" uid="uid://4r3w4407is1i" path="res://assets/videos/placeholder.ogv" id="2_8ofvi"]
+
+[node name="IntroVideo" type="Control" unique_id=678492554]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_5o2u3")
+
+[node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="." unique_id=13712473]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+stream = ExtResource("2_8ofvi")
+autoplay = true
+
+[connection signal="finished" from="VideoStreamPlayer" to="." method="_on_video_stream_player_finished"]

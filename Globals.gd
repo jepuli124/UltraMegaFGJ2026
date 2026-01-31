@@ -2,6 +2,7 @@ extends Node
 
 
 var mouse_sensitivity : float = 0.25
+var current_level : int = 1
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
