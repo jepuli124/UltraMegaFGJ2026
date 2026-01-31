@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://8h4eej8v3uwr"
-path="res://.godot/imported/moose_head.blend-cb32bcf633876864c6e30b96a2ad977b.scn"
+uid="uid://pjfct7xicav2"
+path="res://.godot/imported/CandleHolder.blend-8b512fb36e5dd4a25d41044fa5e6f291.scn"
 
 [deps]
 
-source_file="res://assets/blends/moose_head.blend"
-dest_files=["res://.godot/imported/moose_head.blend-cb32bcf633876864c6e30b96a2ad977b.scn"]
+source_file="res://assets/blends/CandleHolder.blend"
+dest_files=["res://.godot/imported/CandleHolder.blend-8b512fb36e5dd4a25d41044fa5e6f291.scn"]
 
 [params]
 

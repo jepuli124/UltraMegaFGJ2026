@@ -14,7 +14,7 @@ MaskTexture = ExtResource("2_21oj1")
 [node name="Body" type="Sprite3D" parent="." unique_id=991800131]
 
 [node name="Mask" type="Sprite3D" parent="Body" unique_id=480274146]
-transform = Transform3D(1, 0, 0, 0, 0.34281486, 0, 0, 0, 1, 0, 0.35964668, -0.1)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.0018196106, -0.1)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=769915129]
 shape = SubResource("BoxShape3D_21oj1")
