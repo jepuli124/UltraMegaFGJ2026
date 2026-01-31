@@ -16,14 +16,11 @@ signal request_dialogue(dialog : String)
 #}
 var dialogue_data : Dictionary = {}
 
-# Called when the node enters the scene tree for the first time.
-func _ready() -> void:
-	$Body.texture = BodyTexture
-	$Body/Mask.texture = MaskTexture
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	look_at(target.global_position, Vector3.UP)
+	pass
 
 
 func interact(caller : Node3D) -> void:
@@ -34,4 +31,5 @@ func throw_out() -> void:
 	## TODO: Change mask to a blown head sprite and disable physicsbody
 	set_physics_process(false)
 	visible = false
+	
 	

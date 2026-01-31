@@ -70,6 +70,7 @@ func _set_characters() -> void:
 			if child is Sprite3D:
 				child.texture = BODY_TEXTURES[randi_range(0, BODY_TEXTURES.size()-1)]
 				child.get_child(0).texture = MASK_TEXTURES[chr["colour"]]
+				
 		i += 1
 
 func _on_guest_request_dialogue(dialog: String) -> void:
