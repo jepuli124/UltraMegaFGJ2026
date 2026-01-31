@@ -17,6 +17,8 @@ var _interaction_target_collider : Node3D = null
 @onready var animated_sprite : AnimatedSprite2D = $UI/ThrowOutAnimation
 @onready var reticle_animator : AnimatedSprite2D = $UI/Reticle
 
+var target_to_throw : Node3D = null
+
 func _ready():
 	_mouse_sens_adjusted = Globals.mouse_sensitivity / MOUSE_SENS_DIV
 	animated_sprite.visible = false
@@ -76,8 +78,7 @@ func _throw_out(target : Node3D) -> void:
 	InteractionNotify.text = ""
 	animated_sprite.play("throw_out")
 	reticle_animator.play("throwoutreticle")
-	#target.throw_out()
-
+	target_to_throw = target
 
 func _interact_with(target : Node3D) -> void:
 	target.interact(self)
@@ -87,5 +88,6 @@ func _on_reticle_animation_finished() -> void:
 	_is_throwout_going_on = false
 
 func _on_throw_out_animation_animation_finished() -> void:
+	target_to_throw.throw_out()
 	animated_sprite.visible = false
 	_is_throwout_going_on = false
