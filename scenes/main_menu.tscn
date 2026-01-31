@@ -1,0 +1,41 @@
+[gd_scene format=3 uid="uid://cxaes3grfcr6c"]
+
+[ext_resource type="Script" uid="uid://bei1iff35jpi6" path="res://scripts/start_button.gd" id="1_l6cm7"]
+[ext_resource type="Texture2D" uid="uid://bnh8sdyce4lvy" path="res://assets/menu_assets/main_menu_background.png" id="2_ekxnf"]
+
+[node name="MainMenu" type="Node3D" unique_id=1714969157]
+
+[node name="MenuControl" type="Control" parent="." unique_id=2108384915]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ButtonContainer" type="CenterContainer" parent="MenuControl" unique_id=915993954]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -4.0
+offset_top = -4.0
+offset_right = 4.0
+offset_bottom = 4.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="StartButton" type="Button" parent="MenuControl/ButtonContainer" unique_id=345268660]
+layout_mode = 2
+text = "Start"
+script = ExtResource("1_l6cm7")
+
+[node name="Camera3D" type="Camera3D" parent="." unique_id=750111578]
+
+[node name="Sprite3D" type="Sprite3D" parent="." unique_id=841834252]
+transform = Transform3D(0.9928138, 0, -0.119669, 0, 1, 0, 0.119669, 0, 0.9928138, -1.2809548, 0, -5.894902)
+texture = ExtResource("2_ekxnf")
+
+[connection signal="pressed" from="MenuControl/ButtonContainer/StartButton" to="MenuControl/ButtonContainer/StartButton" method="_on_pressed"]
