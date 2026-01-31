@@ -3,6 +3,7 @@ extends CharacterBody3D
 class_name Guest
 
 signal request_dialogue(dialog : String)
+signal guest_thrown_out(is_assasin: bool)
 
 @export var target : Node3D = null
 @export var BodyTexture : Resource = null
@@ -31,5 +32,8 @@ func throw_out() -> void:
 	## TODO: Change mask to a blown head sprite and disable physicsbody
 	set_physics_process(false)
 	visible = false
+	print("emitting")
+	guest_thrown_out.emit(dialogue_data["is_assasin"])
+	
 	
 	

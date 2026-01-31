@@ -4,6 +4,7 @@ const GUEST_SCALE_FLOAT : float = 0.42
 const GUEST_SCALE : Vector3 = Vector3(GUEST_SCALE_FLOAT, GUEST_SCALE_FLOAT, GUEST_SCALE_FLOAT)
 
 var _generated_list_of_characters : Array 
+var _assasins_left : int = Globals.current_level
 
 @onready var dialog_handler : Control = $DialogHandler
 
@@ -72,6 +73,15 @@ func _set_characters() -> void:
 				child.get_child(0).texture = MASK_TEXTURES[chr["colour"]]
 				
 		i += 1
-
+		
 func _on_guest_request_dialogue(dialog: String) -> void:
 	dialog_handler.change_text(dialog)
+
+func _on_guest_guest_thrown_out(is_assasin):
+	if not is_assasin:
+		get_tree().change_scene_to_file("res://scenes/lose_screen.tscn")
+	else:
+		_assasins_left -= 1
+		if _assasins_left < 1:
+			Globals.current_level += 1
+			get_tree().change_scene_to_file("res://scenes/world.tscn")
