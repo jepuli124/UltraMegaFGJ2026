@@ -16,6 +16,7 @@ config/icon="res://icon.svg"
 
 [autoload]
 
+PuzzleGenerator="*uid://cfi400rcw3jhx"
 Globals="*uid://cged6ec3303q4"
 
 [display]
