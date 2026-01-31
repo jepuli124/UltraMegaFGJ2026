@@ -61,12 +61,12 @@ static var MESSAGE_CONTENT_METHODS = [
 	{"formatter": func (list_of_characters_in_order, source_index, target_index):
 		return {"text": "is lying.", "source": source_index, "contradicting_contents": [0, 5], "content_id": 4},
 	"validator": func (list_of_characters_in_order, source_index, target_index) -> bool:
-		return list_of_characters_in_order[target_index]["is_assasin"] and 2 > randi_range(0,9)
+		return list_of_characters_in_order[target_index]["is_assasin"]
 		},
 	{"formatter": func (list_of_characters_in_order, source_index, target_index):
 		return {"text": "is telling the truth.", "source": source_index, "contradicting_contents": [4], "content_id": 5},
 	"validator": func (list_of_characters_in_order, source_index, target_index) -> bool:
-		return not list_of_characters_in_order[target_index]["is_assasin"] and 2 > randi_range(0,9)
+		return not list_of_characters_in_order[target_index]["is_assasin"]
 		}
 ]
 
@@ -130,8 +130,14 @@ static func _generate_messages(list_of_characters_in_order) -> void:
 				
 			var possible_constent_strings = []
 			for content_method in MESSAGE_CONTENT_METHODS:
-				if list_of_characters_in_order[source_index]["is_assasin"] and not content_method["validator"].call(list_of_characters_in_order, source_index, target_index):
-					possible_constent_strings.append(content_method["formatter"].call(list_of_characters_in_order, source_index, target_index))
+				if list_of_characters_in_order[source_index]["is_assasin"]:
+					var valid = true
+					for possible_target_index in target_string["possible_targets"]:
+						if content_method["validator"].call(list_of_characters_in_order, source_index, possible_target_index):
+							valid = false
+							break
+					if valid:
+						possible_constent_strings.append(content_method["formatter"].call(list_of_characters_in_order, source_index, target_index))
 				elif content_method["validator"].call(list_of_characters_in_order, source_index, target_index):
 					possible_constent_strings.append(content_method["formatter"].call(list_of_characters_in_order, source_index, target_index))
 			var constent_string = possible_constent_strings[randi_range(0, max(0, possible_constent_strings.size()-1))]
