@@ -4,6 +4,8 @@ class_name Guest
 
 signal request_dialogue(dialog : String)
 
+
+
 @export var target : Node3D = null
 @export var BodyTexture : Resource = null
 @export var MaskTexture : Resource = null

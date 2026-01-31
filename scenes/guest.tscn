@@ -1,7 +1,6 @@
 [gd_scene format=3 uid="uid://dmu3p8dtw8uwl"]
 
 [ext_resource type="Script" uid="uid://bqyd3ux0xf7k0" path="res://scripts/guest.gd" id="1_my1ra"]
-[ext_resource type="Texture2D" uid="uid://dvuypx8oeweqh" path="res://icon.svg" id="2_21oj1"]
 [ext_resource type="Texture2D" uid="uid://cduigl8k8ljyu" path="res://assets/Sprites/Character/Male1.png" id="3_xgyym"]
 [ext_resource type="Texture2D" uid="uid://wbl1s5vet4q7" path="res://assets/Sprites/Masks/Mask2.png" id="4_534k7"]
 
@@ -10,8 +9,6 @@ size = Vector3(1, 1, 0.1)
 
 [node name="Guest" type="CharacterBody3D" unique_id=1567947846]
 script = ExtResource("1_my1ra")
-BodyTexture = ExtResource("2_21oj1")
-MaskTexture = ExtResource("2_21oj1")
 
 [node name="Body" type="Sprite3D" parent="." unique_id=991800131]
 texture = ExtResource("3_xgyym")
