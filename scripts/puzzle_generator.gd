@@ -1,3 +1,5 @@
+extends Node
+
 const NUMBER_OF_COLOURS = 4
 const NUMBER_OF_MESSAGES_PER_CHARACTER = 3
 const NUMBER_OF_INNOCENTS_PER_TRAVEL_GROUP = 2
@@ -204,7 +206,7 @@ static func _validate_message_grid(message_grid, ignored_rows, row_index = 0) ->
 	for target_index in range(message_grid[0].size()):
 		var statements = []
 		for source_index in range(message_grid.size()):
-			if message_grid[source_index][target_index] != -1 and not ignored_rows.has(floor(source_index / NUMBER_OF_MESSAGES_PER_CHARACTER)):
+			if message_grid[source_index][target_index] is Dictionary and not ignored_rows.has(floor(source_index / NUMBER_OF_MESSAGES_PER_CHARACTER)):
 				statements.append(message_grid[source_index][target_index])
 		for statement in statements:
 			for contradicting in statement[1]:

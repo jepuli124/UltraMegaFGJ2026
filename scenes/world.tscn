@@ -1,9 +1,11 @@
 [gd_scene format=3 uid="uid://cesu0yy3x1byf"]
 
+[ext_resource type="Script" uid="uid://dc18pen7copch" path="res://scripts/world.gd" id="1_71j4m"]
 [ext_resource type="PackedScene" uid="uid://bagq2w31y1q7j" path="res://scenes/room.tscn" id="1_rwgxs"]
 [ext_resource type="PackedScene" uid="uid://dikugovttssoa" path="res://scenes/player.tscn" id="2_4wyf3"]
 [ext_resource type="PackedScene" uid="uid://dmu3p8dtw8uwl" path="res://scenes/guest.tscn" id="3_4wyf3"]
 [ext_resource type="PackedScene" uid="uid://dt5avfjyi3o5o" path="res://scenes/moose_head.tscn" id="4_k0juu"]
+[ext_resource type="PackedScene" uid="uid://5uglku51lecu" path="res://scenes/dialog_handler.tscn" id="6_qfnet"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_k0juu"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -19,6 +21,7 @@ tonemap_mode = 2
 glow_enabled = true
 
 [node name="World" type="Node3D" unique_id=573383342]
+script = ExtResource("1_71j4m")
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=9272890]
 environment = SubResource("Environment_qfnet")
@@ -68,3 +71,5 @@ target = NodePath("../../Player")
 
 [node name="MooseHead" parent="." unique_id=1305199472 instance=ExtResource("4_k0juu")]
 transform = Transform3D(-1.0927847e-08, 0, 0.25, 0, 0.25, 0, -0.25, 0, -1.0927847e-08, -1.8744421, 3.0630825, 0)
+
+[node name="DialogHandler" parent="." unique_id=1727927088 instance=ExtResource("6_qfnet")]
