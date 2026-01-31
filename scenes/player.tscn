@@ -1,6 +1,64 @@
 [gd_scene format=3 uid="uid://dikugovttssoa"]
 
 [ext_resource type="Script" uid="uid://cfk3h4fbctmte" path="res://scripts/player.gd" id="1_3vyb7"]
+[ext_resource type="Texture2D" uid="uid://c04ecwwdd8unl" path="res://assets/Sprites/Gun/Gun1.png" id="2_qlg0r"]
+[ext_resource type="Texture2D" uid="uid://cng1a5f475m83" path="res://assets/Sprites/Gun/Gun2.png" id="3_tuyoq"]
+[ext_resource type="Texture2D" uid="uid://c71nd1bysri21" path="res://assets/Sprites/Gun/Gun3.png" id="4_fjrip"]
+[ext_resource type="Texture2D" uid="uid://bbkwe6m0mgty" path="res://assets/Sprites/Gun/Gun4.png" id="5_smehm"]
+[ext_resource type="Texture2D" uid="uid://f6ica2o32de" path="res://assets/Sprites/Gun/Crosshair1.png" id="6_smehm"]
+[ext_resource type="Texture2D" uid="uid://cbg7iulab3h3o" path="res://assets/Sprites/Gun/Crosshair2.png" id="7_ur7pv"]
+[ext_resource type="Texture2D" uid="uid://uchgk24xa6p3" path="res://assets/Sprites/Gun/Crosshair3.png" id="8_y4r1p"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_qlg0r"]
+animations = [{
+"frames": [],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 2.0,
+"texture": ExtResource("2_qlg0r")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_tuyoq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_fjrip")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_qlg0r")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_smehm")
+}],
+"loop": false,
+"name": &"throw_out",
+"speed": 1.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_d2wvv"]
+animations = [{
+"frames": [{
+"duration": 2.0,
+"texture": ExtResource("6_smehm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_smehm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_ur7pv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_ur7pv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_y4r1p")
+}],
+"loop": false,
+"name": &"throwoutreticle",
+"speed": 1.0
+}]
 
 [node name="Player" type="CharacterBody3D" unique_id=984456956]
 script = ExtResource("1_3vyb7")
@@ -38,5 +96,16 @@ offset_bottom = 19.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Reticle" type="Line2D" parent="UI" unique_id=1925103114]
-points = PackedVector2Array(-5, 0, 45, 0)
+[node name="ThrowOutAnimation" type="AnimatedSprite2D" parent="UI" unique_id=1612532366]
+position = Vector2(19, 257)
+scale = Vector2(1.5, 1.5)
+sprite_frames = SubResource("SpriteFrames_qlg0r")
+animation = &"throw_out"
+
+[node name="Reticle" type="AnimatedSprite2D" parent="UI" unique_id=1803433980]
+position = Vector2(27, 25)
+sprite_frames = SubResource("SpriteFrames_d2wvv")
+animation = &"throwoutreticle"
+
+[connection signal="animation_finished" from="UI/ThrowOutAnimation" to="." method="_on_throw_out_animation_animation_finished"]
+[connection signal="animation_finished" from="UI/Reticle" to="." method="_on_reticle_animation_finished"]

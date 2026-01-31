@@ -274,4 +274,4 @@ mesh = SubResource("ArrayMesh_ybpoa")
 transform = Transform3D(-1.5298985e-08, 0, 0.35, 0, 0.35, 0, -0.35, 0, -1.5298985e-08, -4.1520715, 2.9610143, 0)
 
 [node name="Chandelier" parent="." unique_id=1364843964 instance=ExtResource("7_qvc4m")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.051069736, 3.0265827, -0.028286874)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.013061404, 3.0265827, -0.028286874)
