@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://b4ngh2w8je5x4" path="res://scripts/dialog_handler.gd" id="1_wfo4w"]
 
 [node name="DialogHandler" type="Control" unique_id=1727927088]
+custom_minimum_size = Vector2(100, 64)
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -36,6 +37,7 @@ offset_bottom = 1030.0
 alignment = 1
 
 [node name="Label" type="Label" parent="VBoxContainer" unique_id=680959838]
+custom_minimum_size = Vector2(100, 64)
 layout_mode = 2
 theme_override_font_sizes/font_size = 32
 text = "text box"
@@ -46,4 +48,8 @@ uppercase = true
 [node name="Timer" type="Timer" parent="." unique_id=1041607669]
 one_shot = true
 
+[node name="DialogueDisappear" type="Timer" parent="." unique_id=914500793]
+wait_time = 5.0
+
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="timeout" from="DialogueDisappear" to="." method="_on_dialogue_disappear_timeout"]
