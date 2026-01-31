@@ -1,0 +1,66 @@
+[gd_scene format=3 uid="uid://cesu0yy3x1byf"]
+
+[ext_resource type="PackedScene" uid="uid://bagq2w31y1q7j" path="res://scenes/room.tscn" id="1_rwgxs"]
+[ext_resource type="PackedScene" uid="uid://dikugovttssoa" path="res://scenes/player.tscn" id="2_4wyf3"]
+[ext_resource type="PackedScene" uid="uid://dmu3p8dtw8uwl" path="res://scenes/guest.tscn" id="3_4wyf3"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_k0juu"]
+sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+ground_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+
+[sub_resource type="Sky" id="Sky_71j4m"]
+sky_material = SubResource("ProceduralSkyMaterial_k0juu")
+
+[sub_resource type="Environment" id="Environment_qfnet"]
+background_mode = 2
+sky = SubResource("Sky_71j4m")
+tonemap_mode = 2
+glow_enabled = true
+
+[node name="World" type="Node3D" unique_id=573383342]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=9272890]
+environment = SubResource("Environment_qfnet")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1078011895]
+transform = Transform3D(-0.8660254, -0.43301278, 0.25, 0, 0.49999997, 0.86602545, -0.50000006, 0.75, -0.43301266, 0, 0, 0)
+shadow_enabled = true
+
+[node name="Room" parent="." unique_id=888976769 instance=ExtResource("1_rwgxs")]
+
+[node name="Player" parent="." unique_id=984456956 instance=ExtResource("2_4wyf3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.8423053, 3.2682817)
+
+[node name="Guests" type="Node" parent="." unique_id=83333153]
+
+[node name="Guest2" parent="Guests" unique_id=1567947846 node_paths=PackedStringArray("target") instance=ExtResource("3_4wyf3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.8069391, 1.2966266, -2.0134673)
+target = NodePath("../../Player")
+
+[node name="Guest" parent="Guests" unique_id=609518711 node_paths=PackedStringArray("target") instance=ExtResource("3_4wyf3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.0033617, 1.4022361, -0.79999393)
+target = NodePath("../../Player")
+
+[node name="Guest3" parent="Guests" unique_id=1867495752 node_paths=PackedStringArray("target") instance=ExtResource("3_4wyf3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.2016091, 1.3213382, 0.4853897)
+target = NodePath("../../Player")
+
+[node name="Guest4" parent="Guests" unique_id=1348025385 node_paths=PackedStringArray("target") instance=ExtResource("3_4wyf3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.2622865, 1.3393157, 1.7887505)
+target = NodePath("../../Player")
+
+[node name="Guest5" parent="Guests" unique_id=998344899 node_paths=PackedStringArray("target") instance=ExtResource("3_4wyf3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.2589289, 1.2494284, 1.806728)
+target = NodePath("../../Player")
+
+[node name="Guest6" parent="Guests" unique_id=954505849 node_paths=PackedStringArray("target") instance=ExtResource("3_4wyf3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.175475, 1.3033607, 0.49437833)
+target = NodePath("../../Player")
+
+[node name="Guest7" parent="Guests" unique_id=136077673 node_paths=PackedStringArray("target") instance=ExtResource("3_4wyf3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.0062855, 1.2853835, -0.7820167)
+target = NodePath("../../Player")
+
+[node name="Guest8" parent="Guests" unique_id=91482605 node_paths=PackedStringArray("target") instance=ExtResource("3_4wyf3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.8580674, 1.2584174, -2.004479)
+target = NodePath("../../Player")
