@@ -2,20 +2,20 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://d0cbt861yqljn"
-path.s3tc="res://.godot/imported/interior_room2_walls2.png-96829ba35c911b49819540ea33a41696.s3tc.ctex"
+uid="uid://2n8lvta7w5em"
+path.s3tc="res://.godot/imported/Door_chairText.png-838f013139db625ccf100f3be42ad9ee.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
 generator_parameters={
-"md5": "4c0368a13d0fb76755d6405c7e87957b"
+"md5": "56e5a1b2ca534534f60045fb85d84f0f"
 }
 
 [deps]
 
-source_file="res://assets/blends/interior_room2_walls2.png"
-dest_files=["res://.godot/imported/interior_room2_walls2.png-96829ba35c911b49819540ea33a41696.s3tc.ctex"]
+source_file="res://assets/Door_chairText.png"
+dest_files=["res://.godot/imported/Door_chairText.png-838f013139db625ccf100f3be42ad9ee.s3tc.ctex"]
 
 [params]
 
