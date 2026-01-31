@@ -1,7 +1,7 @@
 extends Node
 
 const NUMBER_OF_COLOURS = 4
-const NUMBER_OF_MESSAGES_PER_CHARACTER = 3
+const NUMBER_OF_MESSAGES_PER_CHARACTER = 2
 const NUMBER_OF_INNOCENTS_PER_TRAVEL_GROUP = 2
 
 # placeholder of an actual global because I can't be bothered
@@ -130,14 +130,8 @@ static func _generate_messages(list_of_characters_in_order) -> void:
 				
 			var possible_constent_strings = []
 			for content_method in MESSAGE_CONTENT_METHODS:
-				if list_of_characters_in_order[source_index]["is_assasin"]:
-					# randomize target to some other target than source or actual target
-					var fake_target_index = randi_range(0, list_of_characters_in_order.size() - 3)
-					if fake_target_index >= source_index:
-						fake_target_index += 1
-					if fake_target_index >= target_index:
-						fake_target_index += 1
-					possible_constent_strings.append(content_method["formatter"].call(list_of_characters_in_order, source_index, fake_target_index))
+				if list_of_characters_in_order[source_index]["is_assasin"] and not content_method["validator"].call(list_of_characters_in_order, source_index, target_index):
+					possible_constent_strings.append(content_method["formatter"].call(list_of_characters_in_order, source_index, target_index))
 				elif content_method["validator"].call(list_of_characters_in_order, source_index, target_index):
 					possible_constent_strings.append(content_method["formatter"].call(list_of_characters_in_order, source_index, target_index))
 			var constent_string = possible_constent_strings[randi_range(0, max(0, possible_constent_strings.size()-1))]
