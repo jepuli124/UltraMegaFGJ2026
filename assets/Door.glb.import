@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://d26bmengcxlsv"
-path="res://.godot/imported/moose_head.glb-698024c5d0ce612771168adddc4da3e1.scn"
+uid="uid://5u8v8iue03o7"
+path="res://.godot/imported/Door.glb-d48ef432de624dd83f736502f7ba785d.scn"
 
 [deps]
 
-source_file="res://assets/blends/moose_head.glb"
-dest_files=["res://.godot/imported/moose_head.glb-698024c5d0ce612771168adddc4da3e1.scn"]
+source_file="res://assets/Door.glb"
+dest_files=["res://.godot/imported/Door.glb-d48ef432de624dd83f736502f7ba785d.scn"]
 
 [params]
 

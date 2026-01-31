@@ -2,17 +2,20 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://wbl1s5vet4q7"
-path.s3tc="res://.godot/imported/Mask2.png-35671e1044fdc3e1fdf37da3277e0b3d.s3tc.ctex"
+uid="uid://d0cbt861yqljn"
+path.s3tc="res://.godot/imported/interior_room2_walls2.png-92bd05fecec76568acc3de03a4f1117e.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
+generator_parameters={
+"md5": "4c0368a13d0fb76755d6405c7e87957b"
+}
 
 [deps]
 
-source_file="res://assets/Sprites/Masks/Mask2.png"
-dest_files=["res://.godot/imported/Mask2.png-35671e1044fdc3e1fdf37da3277e0b3d.s3tc.ctex"]
+source_file="res://assets/interior_room2_walls2.png"
+dest_files=["res://.godot/imported/interior_room2_walls2.png-92bd05fecec76568acc3de03a4f1117e.s3tc.ctex"]
 
 [params]
 
