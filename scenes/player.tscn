@@ -4,7 +4,6 @@
 [ext_resource type="Texture2D" uid="uid://c04ecwwdd8unl" path="res://assets/Sprites/Gun/Gun1.png" id="2_qlg0r"]
 [ext_resource type="Texture2D" uid="uid://cng1a5f475m83" path="res://assets/Sprites/Gun/Gun2.png" id="3_tuyoq"]
 [ext_resource type="Texture2D" uid="uid://c71nd1bysri21" path="res://assets/Sprites/Gun/Gun3.png" id="4_fjrip"]
-[ext_resource type="Texture2D" uid="uid://bbkwe6m0mgty" path="res://assets/Sprites/Gun/Gun4.png" id="5_smehm"]
 [ext_resource type="Texture2D" uid="uid://f6ica2o32de" path="res://assets/Sprites/Gun/Crosshair1.png" id="6_smehm"]
 [ext_resource type="Texture2D" uid="uid://cbg7iulab3h3o" path="res://assets/Sprites/Gun/Crosshair2.png" id="7_ur7pv"]
 [ext_resource type="Texture2D" uid="uid://uchgk24xa6p3" path="res://assets/Sprites/Gun/Crosshair3.png" id="8_y4r1p"]
@@ -46,14 +45,6 @@ animations = [{
 "loop": true,
 "name": &"default",
 "speed": 5.0
-}, {
-"frames": [{
-"duration": 2.0,
-"texture": ExtResource("5_smehm")
-}],
-"loop": true,
-"name": &"final",
-"speed": 1.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -145,7 +136,7 @@ grow_vertical = 2
 [node name="Reticle" type="AnimatedSprite2D" parent="UI/ReticleCenter" unique_id=1803433980]
 position = Vector2(19, 81)
 sprite_frames = SubResource("SpriteFrames_d2wvv")
-animation = &"final"
+animation = &"throwoutreticle"
 
 [node name="InteractionNotify" type="Label" parent="UI/ReticleCenter" unique_id=826140585]
 layout_mode = 1
@@ -186,7 +177,7 @@ grow_vertical = 0
 position = Vector2(21, -250)
 scale = Vector2(1.5, 1.5)
 sprite_frames = SubResource("SpriteFrames_qlg0r")
-animation = &"final"
+animation = &"throw_out"
 
 [node name="Control2" type="Control" parent="UI" unique_id=1711265610]
 layout_mode = 1

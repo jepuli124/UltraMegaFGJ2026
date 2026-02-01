@@ -22,3 +22,9 @@ func _on_finished():
 	elif Globals.current_level > 6:
 		get_tree().change_scene_to_file("res://scenes/main_menu.tscn")
 	get_tree().change_scene_to_file("res://scenes/world.tscn")
+
+
+func _input(event: InputEvent) -> void:
+	if event.is_action_pressed("Space"):
+		if Globals.current_level < 6:
+			get_tree().change_scene_to_file("res://scenes/world.tscn")

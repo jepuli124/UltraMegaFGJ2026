@@ -53,7 +53,7 @@ static var MESSAGE_CONTENT_METHODS = [
 		return list_of_characters_in_order[source_index]["travel_companions"].has(target_index)
 		},
 	{"formatter": func (list_of_characters_in_order, source_index, target_index):
-		return {"text": "did not travel with me", "source": source_index, "contradicting_contents": [0], "content_id": 1},
+		return {"text": "did not travel with me.", "source": source_index, "contradicting_contents": [0], "content_id": 1},
 	"validator": func (list_of_characters_in_order, source_index, target_index) -> bool:
 		return not list_of_characters_in_order[source_index]["travel_companions"].has(target_index)
 		},
