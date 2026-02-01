@@ -1,10 +1,11 @@
 [gd_scene format=3 uid="uid://cbgcfevqsw7bw"]
 
-[ext_resource type="Script" uid="uid://b01x2xue0cylc" path="res://scripts/main_menu.gd" id="1_8ln24"]
+[ext_resource type="Script" path="res://scripts/main_menu.gd" id="1_8ln24"]
 [ext_resource type="Script" uid="uid://bei1iff35jpi6" path="res://scripts/start_button.gd" id="1_l6cm7"]
 [ext_resource type="Texture2D" uid="uid://d0cbt861yqljn" path="res://assets/interior_room2_walls2.png" id="2_wu84c"]
 [ext_resource type="AudioStream" uid="uid://bre5e3u320tqr" path="res://music/SomeMusic3.1.wav" id="3_bqqt6"]
-[ext_resource type="Script" uid="uid://eusg0v1j83sj" path="res://scripts/menu_audio_stream_player.gd" id="4_wu84c"]
+[ext_resource type="Script" path="res://scripts/menu_audio_stream_player.gd" id="4_wu84c"]
+[ext_resource type="Texture2D" uid="uid://co8s7g7ii8j4n" path="res://assets/Sprites/Cutscene/Intro.png" id="6_rtw2f"]
 
 [sub_resource type="Animation" id="Animation_8ln24"]
 length = 0.001
@@ -63,6 +64,24 @@ grow_vertical = 2
 layout_mode = 2
 text = "Start"
 script = ExtResource("1_l6cm7")
+
+[node name="MarginContainer" type="MarginContainer" parent="MenuControl" unique_id=594472664]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -260.5
+offset_right = 260.5
+offset_bottom = 721.0
+grow_horizontal = 2
+mouse_filter = 2
+theme_override_constants/margin_top = 200
+
+[node name="TextureRect" type="TextureRect" parent="MenuControl/MarginContainer" unique_id=1847782128]
+layout_mode = 2
+mouse_filter = 2
+texture = ExtResource("6_rtw2f")
+expand_mode = 4
 
 [node name="Camera3D" type="Camera3D" parent="." unique_id=750111578]
 transform = Transform3D(0.99999994, 0, 0, 0, 0.99999994, 0, 0, 0, 1, 0, 0, 0.23039937)

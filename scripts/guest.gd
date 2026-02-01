@@ -26,7 +26,8 @@ func _process(delta: float) -> void:
 
 
 func interact(caller : Node3D) -> void:
-	var msg = dialogue_data["messages"][randi_range(0, len(dialogue_data["messages"]) -1)]["text"]
+	#var msg = dialogue_data["messages"][randi_range(0, len(dialogue_data["messages"]) -1)]["text"]
+	var msg = str(dialogue_data["messages"][0]["text"] + '\n' + dialogue_data["messages"][1]["text"])
 	request_dialogue.emit(msg)
 	bobbing.play("bob")
 
