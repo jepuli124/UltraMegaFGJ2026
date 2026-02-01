@@ -17,16 +17,18 @@ signal guest_thrown_out(is_assasin: bool)
 #}
 var dialogue_data : Dictionary = {}
 
+@onready var bobbing: AnimationPlayer = $Bobbing
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	look_at(target.global_position, Vector3.UP)
-	pass
+	
 
 
 func interact(caller : Node3D) -> void:
 	var msg = dialogue_data["messages"][randi_range(0, len(dialogue_data["messages"]) -1)]["text"]
 	request_dialogue.emit(msg)
+	bobbing.play("bob")
 
 func throw_out() -> void:
 	## TODO: Change mask to a blown head sprite and disable physicsbody

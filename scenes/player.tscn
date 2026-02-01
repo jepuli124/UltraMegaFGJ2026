@@ -13,7 +13,7 @@
 [sub_resource type="SpriteFrames" id="SpriteFrames_d2wvv"]
 animations = [{
 "frames": [{
-"duration": 2.0,
+"duration": 1.0,
 "texture": ExtResource("6_smehm")
 }, {
 "duration": 1.0,
@@ -30,7 +30,7 @@ animations = [{
 }],
 "loop": false,
 "name": &"throwoutreticle",
-"speed": 1.0
+"speed": 2.0
 }]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_qlg0r"]
@@ -41,7 +41,10 @@ animations = [{
 "speed": 5.0
 }, {
 "frames": [{
-"duration": 2.0,
+"duration": 1.0,
+"texture": ExtResource("2_qlg0r")
+}, {
+"duration": 1.0,
 "texture": ExtResource("2_qlg0r")
 }, {
 "duration": 1.0,
@@ -58,7 +61,7 @@ animations = [{
 }],
 "loop": false,
 "name": &"throw_out",
-"speed": 1.0
+"speed": 2.0
 }]
 
 [node name="Player" type="CharacterBody3D" unique_id=984456956]
@@ -130,6 +133,8 @@ position = Vector2(21, -250)
 scale = Vector2(1.5, 1.5)
 sprite_frames = SubResource("SpriteFrames_qlg0r")
 animation = &"throw_out"
+frame = 5
+frame_progress = 1.0
 
 [node name="MarginContainer" type="MarginContainer" parent="." unique_id=1285664064]
 offset_right = 1.0
@@ -139,7 +144,7 @@ theme_override_constants/margin_top = 100
 
 [node name="AssasinsLeft" type="Label" parent="MarginContainer" unique_id=1244308810]
 layout_mode = 2
-text = "Assasins left: "
+text = "Uninvited quests left: "
 label_settings = ExtResource("9_ur7pv")
 
 [connection signal="animation_finished" from="UI/ReticleCenter/Reticle" to="." method="_on_reticle_animation_finished"]
