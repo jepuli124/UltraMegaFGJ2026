@@ -15,6 +15,7 @@ var _interaction_target_collider : Node3D = null
 @onready var InteractionRay : RayCast3D = $Camera/JustInCaseRayCast
 @onready var Camera : Camera3D = $Camera
 @onready var shakeAnim : AnimationPlayer = $CamShake
+@onready var throwAudio: AudioStreamPlayer3D = $ThrowAudio
 
 @onready var AssasinsLeft : Label = $MarginContainer/AssasinsLeft
 @onready var reticle_animator: AnimatedSprite2D = $UI/ReticleCenter/Reticle
@@ -93,6 +94,7 @@ func _interact_with(target : Node3D) -> void:
 
 func _on_reticle_animation_finished() -> void:
 	shakeAnim.play("shake")
+	throwAudio.play()
 	reticle_animator.play("final")
 	await shakeAnim.animation_finished
 	reticle_animator.visible = false
