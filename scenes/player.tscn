@@ -14,19 +14,24 @@
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("6_smehm")
-}, {
-"duration": 1.0,
-"texture": ExtResource("6_smehm")
-}, {
-"duration": 1.0,
-"texture": ExtResource("7_ur7pv")
-}, {
-"duration": 1.0,
-"texture": ExtResource("7_ur7pv")
-}, {
-"duration": 1.0,
 "texture": ExtResource("8_y4r1p")
+}],
+"loop": true,
+"name": &"final",
+"speed": 2.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6_smehm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_smehm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_ur7pv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_ur7pv")
 }],
 "loop": false,
 "name": &"throwoutreticle",
@@ -41,6 +46,14 @@ animations = [{
 "speed": 5.0
 }, {
 "frames": [{
+"duration": 2.0,
+"texture": ExtResource("5_smehm")
+}],
+"loop": true,
+"name": &"final",
+"speed": 1.0
+}, {
+"frames": [{
 "duration": 1.0,
 "texture": ExtResource("2_qlg0r")
 }, {
@@ -53,21 +66,47 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("4_fjrip")
 }, {
-"duration": 1.0,
+"duration": 1.5,
 "texture": ExtResource("2_qlg0r")
-}, {
-"duration": 1.0,
-"texture": ExtResource("5_smehm")
 }],
 "loop": false,
 "name": &"throw_out",
 "speed": 2.0
 }]
 
+[sub_resource type="Animation" id="Animation_ur7pv"]
+length = 0.001
+tracks/0/type = "rotation_3d"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Camera")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = PackedFloat32Array(0, 1, 0, 0, 0, 1)
+
+[sub_resource type="Animation" id="Animation_y4r1p"]
+resource_name = "shake"
+length = 0.3
+tracks/0/type = "rotation_3d"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Camera")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = PackedFloat32Array(0, 1, 0, 0, 0, 1, 0.075, 1, 0.053494975, 0, 0, 0.9985681, 0.15, 1, 0, 0, 0, 1, 0.225, 1, -0.030896133, 0, 0, 0.9995226, 0.3, 1, 0, 0, 0, 1)
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_d2wvv"]
+_data = {
+&"RESET": SubResource("Animation_ur7pv"),
+&"shake": SubResource("Animation_y4r1p")
+}
+
 [node name="Player" type="CharacterBody3D" unique_id=984456956]
 script = ExtResource("1_3vyb7")
 
 [node name="Camera" type="Camera3D" parent="." unique_id=1336470293]
+transform = Transform3D(1, 0, 0, 0, 0.99999994, 0, 0, 0, 0.99999994, 0, 0, 0)
+rotation_edit_mode = 1
 
 [node name="JustInCaseRayCast" type="RayCast3D" parent="Camera" unique_id=1579671964]
 target_position = Vector3(0, 0, -10)
@@ -97,7 +136,7 @@ grow_vertical = 2
 [node name="Reticle" type="AnimatedSprite2D" parent="UI/ReticleCenter" unique_id=1803433980]
 position = Vector2(19, 81)
 sprite_frames = SubResource("SpriteFrames_d2wvv")
-animation = &"throwoutreticle"
+animation = &"final"
 
 [node name="InteractionNotify" type="Label" parent="UI/ReticleCenter" unique_id=826140585]
 layout_mode = 1
@@ -138,9 +177,7 @@ grow_vertical = 0
 position = Vector2(21, -250)
 scale = Vector2(1.5, 1.5)
 sprite_frames = SubResource("SpriteFrames_qlg0r")
-animation = &"throw_out"
-frame = 5
-frame_progress = 1.0
+animation = &"final"
 
 [node name="MarginContainer" type="MarginContainer" parent="." unique_id=1285664064]
 offset_right = 1.0
@@ -152,6 +189,9 @@ theme_override_constants/margin_top = 100
 layout_mode = 2
 text = "Uninvited quests left: "
 label_settings = ExtResource("9_ur7pv")
+
+[node name="CamShake" type="AnimationPlayer" parent="." unique_id=2136302884]
+libraries/ = SubResource("AnimationLibrary_d2wvv")
 
 [connection signal="animation_finished" from="UI/ReticleCenter/Reticle" to="." method="_on_reticle_animation_finished"]
 [connection signal="animation_finished" from="UI/Control/ThrowOutAnimation" to="." method="_on_throw_out_animation_animation_finished"]
