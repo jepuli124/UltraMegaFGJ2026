@@ -2,6 +2,8 @@
 
 [ext_resource type="Script" uid="uid://bei1iff35jpi6" path="res://scripts/start_button.gd" id="1_l6cm7"]
 [ext_resource type="Texture2D" uid="uid://bnh8sdyce4lvy" path="res://assets/menu_assets/main_menu_background.png" id="2_ekxnf"]
+[ext_resource type="AudioStream" uid="uid://bre5e3u320tqr" path="res://music/SomeMusic3.1.wav" id="3_bqqt6"]
+[ext_resource type="Script" uid="uid://eusg0v1j83sj" path="res://scripts/menu_audio_stream_player.gd" id="4_wu84c"]
 
 [node name="MainMenu" type="Node3D" unique_id=1714969157]
 
@@ -38,4 +40,10 @@ script = ExtResource("1_l6cm7")
 transform = Transform3D(0.9928138, 0, -0.119669, 0, 1, 0, 0.119669, 0, 0.9928138, -1.2809548, 0, -5.894902)
 texture = ExtResource("2_ekxnf")
 
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1154887255]
+stream = ExtResource("3_bqqt6")
+autoplay = true
+script = ExtResource("4_wu84c")
+
 [connection signal="pressed" from="MenuControl/ButtonContainer/StartButton" to="MenuControl/ButtonContainer/StartButton" method="_on_pressed"]
+[connection signal="finished" from="AudioStreamPlayer" to="AudioStreamPlayer" method="_on_finished"]

@@ -5,7 +5,9 @@
 [ext_resource type="PackedScene" uid="uid://dikugovttssoa" path="res://scenes/player.tscn" id="2_4wyf3"]
 [ext_resource type="PackedScene" uid="uid://dmu3p8dtw8uwl" path="res://scenes/guest.tscn" id="3_4wyf3"]
 [ext_resource type="PackedScene" uid="uid://5uglku51lecu" path="res://scenes/dialog_handler.tscn" id="6_qfnet"]
-[ext_resource type="PackedScene" path="res://scenes/table_candle.tscn" id="15_xo05s"]
+[ext_resource type="AudioStream" uid="uid://bre5e3u320tqr" path="res://music/SomeMusic3.1.wav" id="7_4mrxx"]
+[ext_resource type="Script" uid="uid://eusg0v1j83sj" path="res://scripts/menu_audio_stream_player.gd" id="7_i7141"]
+[ext_resource type="PackedScene" uid="uid://bl7k36adj6efr" path="res://scenes/table_candle.tscn" id="15_xo05s"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_k0juu"]
 sky_top_color = Color(0.50865304, 0.5804021, 0.67292804, 1)
@@ -80,3 +82,10 @@ target = NodePath("../../Player")
 
 [node name="TableCandle" parent="Objects" unique_id=1070739078 instance=ExtResource("15_xo05s")]
 transform = Transform3D(0.37822857, 0, -0.9257122, 0, 1, 0, 0.9257122, 0, 0.37822857, 0, 1.5, 0)
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1579279387]
+stream = ExtResource("7_4mrxx")
+autoplay = true
+script = ExtResource("7_i7141")
+
+[connection signal="finished" from="AudioStreamPlayer" to="AudioStreamPlayer" method="_on_finished"]
