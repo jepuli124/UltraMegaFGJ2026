@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://cisgayrxtk3fd"]
+
+[ext_resource type="Script" uid="uid://b5eakceh1dhge" path="res://scripts/video_stream_player.gd" id="1_g1ell"]
+[ext_resource type="VideoStream" uid="uid://4r3w4407is1i" path="res://assets/videos/placeholder.ogv" id="1_hp486"]
+
+[node name="LevelTransition" type="Control" unique_id=2125628431]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="." unique_id=2012853008]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+stream = ExtResource("1_hp486")
+expand = true
+script = ExtResource("1_g1ell")
+
+[connection signal="finished" from="VideoStreamPlayer" to="VideoStreamPlayer" method="_on_finished"]
