@@ -1,4 +1,4 @@
-[gd_scene format=4 uid="uid://bl7k36adj6efr"]
+[gd_scene format=4 uid="uid://8qiuoe2p1shn"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_fa5ji"]
 resource_name = "Material.001"
@@ -119,7 +119,7 @@ draw_pass_1 = SubResource("SphereMesh_3oab8")
 [node name="GPUParticles3D2" type="GPUParticles3D" parent="." unique_id=404755272]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.32073164, 0.43563342, 0.010491103)
 amount = 4
-lifetime = 1.4000000000000001
+lifetime = 1.4
 fixed_fps = 16
 process_material = SubResource("ParticleProcessMaterial_yp51c")
 draw_pass_1 = SubResource("SphereMesh_3oab8")
@@ -134,7 +134,7 @@ draw_pass_1 = SubResource("SphereMesh_3oab8")
 [node name="GPUParticles3D4" type="GPUParticles3D" parent="." unique_id=891280154]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0015990883, 0.5617298, 0.010491103)
 amount = 4
-lifetime = 1.4000000000000001
+lifetime = 1.4
 fixed_fps = 16
 process_material = SubResource("ParticleProcessMaterial_yp51c")
 draw_pass_1 = SubResource("SphereMesh_3oab8")
@@ -142,7 +142,7 @@ draw_pass_1 = SubResource("SphereMesh_3oab8")
 [node name="GPUParticles3D5" type="GPUParticles3D" parent="." unique_id=870582635]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.3036871, 0.44379234, 0.017919898)
 amount = 4
-lifetime = 1.4000000000000001
+lifetime = 1.4
 fixed_fps = 16
 process_material = SubResource("ParticleProcessMaterial_yp51c")
 draw_pass_1 = SubResource("SphereMesh_3oab8")

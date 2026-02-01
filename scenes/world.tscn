@@ -4,29 +4,24 @@
 [ext_resource type="PackedScene" uid="uid://bagq2w31y1q7j" path="res://scenes/room.tscn" id="1_rwgxs"]
 [ext_resource type="PackedScene" uid="uid://dikugovttssoa" path="res://scenes/player.tscn" id="2_4wyf3"]
 [ext_resource type="PackedScene" uid="uid://dmu3p8dtw8uwl" path="res://scenes/guest.tscn" id="3_4wyf3"]
-[ext_resource type="Texture2D" uid="uid://cu1emvjqbd5gl" path="res://assets/Sprites/Character/Female1.png" id="5_o8fc1"]
 [ext_resource type="PackedScene" uid="uid://5uglku51lecu" path="res://scenes/dialog_handler.tscn" id="6_qfnet"]
-[ext_resource type="Texture2D" uid="uid://c2iwddh2h8me2" path="res://assets/Sprites/Masks/Mask1.png" id="6_xo05s"]
-[ext_resource type="Texture2D" uid="uid://0t5valnwtthx" path="res://assets/Sprites/Character/Female2.png" id="7_dss4m"]
-[ext_resource type="Texture2D" uid="uid://wbl1s5vet4q7" path="res://assets/Sprites/Masks/Mask2.png" id="8_7t5mc"]
-[ext_resource type="Texture2D" uid="uid://dequqg4tdvajt" path="res://assets/Sprites/Character/Female3.png" id="9_lakw3"]
-[ext_resource type="Texture2D" uid="uid://cln18wm4860tj" path="res://assets/Sprites/Masks/Mask3.png" id="10_pm21f"]
-[ext_resource type="Texture2D" uid="uid://cfmabcnywao2j" path="res://assets/Sprites/Character/Female4.png" id="11_2lf6f"]
-[ext_resource type="Texture2D" uid="uid://c8qarf2n61cjk" path="res://assets/Sprites/Masks/Mask4.png" id="12_7iits"]
-[ext_resource type="PackedScene" path="res://scenes/table_candle.tscn" id="15_xo05s"]
+[ext_resource type="AudioStream" uid="uid://bre5e3u320tqr" path="res://music/SomeMusic3.1.wav" id="7_4mrxx"]
+[ext_resource type="Script" path="res://scripts/menu_audio_stream_player.gd" id="7_i7141"]
+[ext_resource type="PackedScene" uid="uid://8qiuoe2p1shn" path="res://scenes/table_candle.tscn" id="15_xo05s"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_k0juu"]
 sky_top_color = Color(0.50865304, 0.5804021, 0.67292804, 1)
 sky_horizon_color = Color(0.16177374, 0.16590115, 0.17416587, 1)
 sky_energy_multiplier = 0.0
-ground_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+ground_bottom_color = Color(0.13812652, 0.11423028, 0.08734027, 1)
+ground_horizon_color = Color(0, 0, 0, 1)
 
 [sub_resource type="Sky" id="Sky_71j4m"]
 sky_material = SubResource("ProceduralSkyMaterial_k0juu")
 
 [sub_resource type="Environment" id="Environment_qfnet"]
 background_mode = 2
-background_energy_multiplier = 0.03
+background_energy_multiplier = 0.0
 sky = SubResource("Sky_71j4m")
 tonemap_mode = 2
 glow_enabled = true
@@ -40,7 +35,6 @@ environment = SubResource("Environment_qfnet")
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1078011895]
 transform = Transform3D(-0.8660254, -0.43301278, 0.25, 0, 0.49999997, 0.86602545, -0.50000006, 0.75, -0.43301266, 0, 0, 0)
 light_color = Color(0, 0, 0, 1)
-light_energy = 6.68
 shadow_enabled = true
 
 [node name="Room" parent="." unique_id=888976769 instance=ExtResource("1_rwgxs")]
@@ -53,26 +47,18 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.051639274, 1.9514319, 3.38
 [node name="Guest2" parent="Guests" unique_id=1567947846 node_paths=PackedStringArray("target") instance=ExtResource("3_4wyf3")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.341358, 1.5632341, -2.4883857)
 target = NodePath("../../Player")
-BodyTexture = ExtResource("5_o8fc1")
-MaskTexture = ExtResource("6_xo05s")
 
 [node name="Guest" parent="Guests" unique_id=609518711 node_paths=PackedStringArray("target") instance=ExtResource("3_4wyf3")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.6070392, 1.6688436, -0.96536314)
 target = NodePath("../../Player")
-BodyTexture = ExtResource("7_dss4m")
-MaskTexture = ExtResource("8_7t5mc")
 
 [node name="Guest3" parent="Guests" unique_id=1867495752 node_paths=PackedStringArray("target") instance=ExtResource("3_4wyf3")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.7286716, 1.5879457, 0.3757019)
 target = NodePath("../../Player")
-BodyTexture = ExtResource("9_lakw3")
-MaskTexture = ExtResource("10_pm21f")
 
 [node name="Guest4" parent="Guests" unique_id=1348025385 node_paths=PackedStringArray("target") instance=ExtResource("3_4wyf3")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.7427213, 1.6059232, 1.7887505)
 target = NodePath("../../Player")
-BodyTexture = ExtResource("11_2lf6f")
-MaskTexture = ExtResource("12_7iits")
 
 [node name="Guest5" parent="Guests" unique_id=998344899 node_paths=PackedStringArray("target") instance=ExtResource("3_4wyf3")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.7857848, 1.6063603, 1.806728)
@@ -96,3 +82,10 @@ target = NodePath("../../Player")
 
 [node name="TableCandle" parent="Objects" unique_id=1070739078 instance=ExtResource("15_xo05s")]
 transform = Transform3D(0.37822857, 0, -0.9257122, 0, 1, 0, 0.9257122, 0, 0.37822857, 0, 1.5, 0)
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1579279387]
+stream = ExtResource("7_4mrxx")
+autoplay = true
+script = ExtResource("7_i7141")
+
+[connection signal="finished" from="AudioStreamPlayer" to="AudioStreamPlayer" method="_on_finished"]

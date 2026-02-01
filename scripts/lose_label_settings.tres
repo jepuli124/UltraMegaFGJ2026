@@ -1,0 +1,10 @@
+[gd_resource type="LabelSettings" format=3 uid="uid://pqehoa30ecs8"]
+
+[ext_resource type="FontFile" uid="uid://bexqfov2d1m8k" path="res://assets/pixel-game.regular.otf" id="1_1u06n"]
+
+[resource]
+font = ExtResource("1_1u06n")
+font_size = 48
+font_color = Color(0.9998018, 0.16820541, 0.1787405, 1)
+outline_size = 5
+outline_color = Color(0.18359044, 0.18359044, 0.18359044, 1)

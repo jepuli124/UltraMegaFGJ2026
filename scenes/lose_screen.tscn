@@ -1,0 +1,75 @@
+[gd_scene format=3 uid="uid://dmg26rs5gyvvd"]
+
+[ext_resource type="LabelSettings" uid="uid://pqehoa30ecs8" path="res://scripts/lose_label_settings.tres" id="1_1n1m7"]
+[ext_resource type="Script" uid="uid://cg8ef4fmhbui2" path="res://scripts/start_over_button.gd" id="1_uglf1"]
+[ext_resource type="VideoStream" uid="uid://4r3w4407is1i" path="res://assets/videos/placeholder.ogv" id="3_73mov"]
+[ext_resource type="Script" uid="uid://bmk7nlpmlus4e" path="res://scripts/lose_video_stream_player.gd" id="4_lytqm"]
+
+[node name="LoseScreen" type="Control" unique_id=1057381468]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=763924981]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.3779188, 0.37791887, 0.37791884, 1)
+
+[node name="Label" type="Label" parent="." unique_id=1793681523]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 25.0
+grow_horizontal = 2
+text = "
+
+Looks like you failed
+To identify the correct
+assasins
+
+"
+label_settings = ExtResource("1_1n1m7")
+horizontal_alignment = 1
+
+[node name="Center" type="CenterContainer" parent="." unique_id=1491169975]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Center" unique_id=1548463059]
+layout_mode = 2
+
+[node name="StartOverButton" type="Button" parent="Center/VBoxContainer" unique_id=910041949]
+layout_mode = 2
+text = "Start over"
+script = ExtResource("1_uglf1")
+
+[node name="TryAgainButton" type="Button" parent="Center/VBoxContainer" unique_id=1632028582]
+layout_mode = 2
+text = "Try again"
+
+[node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="." unique_id=1629620332]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+stream = ExtResource("3_73mov")
+autoplay = true
+expand = true
+script = ExtResource("4_lytqm")
+
+[connection signal="pressed" from="Center/VBoxContainer/StartOverButton" to="Center/VBoxContainer/StartOverButton" method="_on_pressed"]
+[connection signal="pressed" from="Center/VBoxContainer/TryAgainButton" to="Center/VBoxContainer/StartOverButton" method="_on_try_again_button_pressed"]
+[connection signal="finished" from="VideoStreamPlayer" to="VideoStreamPlayer" method="_on_finished"]
