@@ -1,11 +1,41 @@
 [gd_scene format=3 uid="uid://cbgcfevqsw7bw"]
 
+[ext_resource type="Script" uid="uid://b01x2xue0cylc" path="res://scripts/main_menu.gd" id="1_8ln24"]
 [ext_resource type="Script" uid="uid://bei1iff35jpi6" path="res://scripts/start_button.gd" id="1_l6cm7"]
-[ext_resource type="Texture2D" uid="uid://bnh8sdyce4lvy" path="res://assets/menu_assets/main_menu_background.png" id="2_ekxnf"]
+[ext_resource type="Texture2D" uid="uid://d0cbt861yqljn" path="res://assets/interior_room2_walls2.png" id="2_wu84c"]
 [ext_resource type="AudioStream" uid="uid://bre5e3u320tqr" path="res://music/SomeMusic3.1.wav" id="3_bqqt6"]
-[ext_resource type="Script" path="res://scripts/menu_audio_stream_player.gd" id="4_wu84c"]
+[ext_resource type="Script" uid="uid://eusg0v1j83sj" path="res://scripts/menu_audio_stream_player.gd" id="4_wu84c"]
+
+[sub_resource type="Animation" id="Animation_8ln24"]
+length = 0.001
+tracks/0/type = "rotation_3d"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = PackedFloat32Array(0, 1, 0, 0, 0, 1)
+
+[sub_resource type="Animation" id="Animation_wu84c"]
+resource_name = "spin"
+length = 8.0
+loop_mode = 1
+tracks/0/type = "rotation_3d"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = PackedFloat32Array(0.03333334, 1, 0, 0, 0, 1, 2, 1, 0, 0, 0.707, 0.707, 4, 1, 0, 0, 1, 0, 6, 1, 0, 0, 0.707, -0.707)
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_8ln24"]
+_data = {
+&"RESET": SubResource("Animation_8ln24"),
+&"spin": SubResource("Animation_wu84c")
+}
 
 [node name="MainMenu" type="Node3D" unique_id=1714969157]
+script = ExtResource("1_8ln24")
 
 [node name="MenuControl" type="Control" parent="." unique_id=2108384915]
 layout_mode = 3
@@ -35,10 +65,16 @@ text = "Start"
 script = ExtResource("1_l6cm7")
 
 [node name="Camera3D" type="Camera3D" parent="." unique_id=750111578]
+transform = Transform3D(0.99999994, 0, 0, 0, 0.99999994, 0, 0, 0, 1, 0, 0, 0.23039937)
 
 [node name="Sprite3D" type="Sprite3D" parent="." unique_id=841834252]
-transform = Transform3D(0.9928138, 0, -0.119669, 0, 1, 0, 0.119669, 0, 0.9928138, -1.2809548, 0, -5.894902)
-texture = ExtResource("2_ekxnf")
+transform = Transform3D(0.99999994, 0, 0, 0, 1, 0, 0, 0, 0.99999994, 0.6441971, 1.9158001, -0.7541604)
+texture = ExtResource("2_wu84c")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=2037214006]
+root_node = NodePath("../Camera3D")
+libraries/ = SubResource("AnimationLibrary_8ln24")
+playback_auto_capture = false
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1154887255]
 stream = ExtResource("3_bqqt6")
