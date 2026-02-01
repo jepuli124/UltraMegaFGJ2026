@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://ccquq12pmwb8x"]
 
 [ext_resource type="Script" uid="uid://b5eakceh1dhge" path="res://scripts/video_stream_player.gd" id="1_g1ell"]
-[ext_resource type="VideoStream" path="res://assets/videos/placeholder2.ogv" id="1_hp486"]
+[ext_resource type="VideoStream" uid="uid://ccl48p6i476v" path="res://assets/videos/placeholder2.ogv" id="1_hp486"]
 
 [node name="LevelTransition" type="Control" unique_id=2125628431]
 layout_mode = 3
@@ -19,6 +19,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 stream = ExtResource("1_hp486")
+volume_db = -3.8899996
 expand = true
 script = ExtResource("1_g1ell")
 

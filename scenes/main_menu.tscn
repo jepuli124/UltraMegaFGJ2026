@@ -1,10 +1,10 @@
 [gd_scene format=3 uid="uid://cbgcfevqsw7bw"]
 
-[ext_resource type="Script" path="res://scripts/main_menu.gd" id="1_8ln24"]
+[ext_resource type="Script" uid="uid://b01x2xue0cylc" path="res://scripts/main_menu.gd" id="1_8ln24"]
 [ext_resource type="Script" uid="uid://bei1iff35jpi6" path="res://scripts/start_button.gd" id="1_l6cm7"]
 [ext_resource type="Texture2D" uid="uid://d0cbt861yqljn" path="res://assets/interior_room2_walls2.png" id="2_wu84c"]
 [ext_resource type="AudioStream" uid="uid://bre5e3u320tqr" path="res://music/SomeMusic3.1.wav" id="3_bqqt6"]
-[ext_resource type="Script" path="res://scripts/menu_audio_stream_player.gd" id="4_wu84c"]
+[ext_resource type="Script" uid="uid://eusg0v1j83sj" path="res://scripts/menu_audio_stream_player.gd" id="4_wu84c"]
 [ext_resource type="Texture2D" uid="uid://co8s7g7ii8j4n" path="res://assets/Sprites/Cutscene/Intro.png" id="6_rtw2f"]
 
 [sub_resource type="Animation" id="Animation_8ln24"]
@@ -97,6 +97,7 @@ playback_auto_capture = false
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1154887255]
 stream = ExtResource("3_bqqt6")
+volume_db = -11.684
 autoplay = true
 script = ExtResource("4_wu84c")
 
