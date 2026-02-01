@@ -1,6 +1,24 @@
 [gd_scene format=3 uid="uid://5uglku51lecu"]
 
 [ext_resource type="Script" uid="uid://b4ngh2w8je5x4" path="res://scripts/dialog_handler.gd" id="1_wfo4w"]
+[ext_resource type="LabelSettings" uid="uid://ds5wtryhujr60" path="res://scripts/general_label_settings.tres" id="2_jaiep"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jxftp"]
+content_margin_left = 10.0
+content_margin_top = 10.0
+content_margin_right = 10.0
+content_margin_bottom = 10.0
+bg_color = Color(0.2901961, 0.2901961, 0.2901961, 0.92941177)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0.18359044, 0.18359044, 0.18359044, 1)
+corner_detail = 16
+expand_margin_left = 10.0
+expand_margin_top = 10.0
+expand_margin_right = 10.0
+expand_margin_bottom = 10.0
 
 [node name="DialogHandler" type="Control" unique_id=1727927088]
 custom_minimum_size = Vector2(100, 64)
@@ -13,6 +31,7 @@ grow_vertical = 2
 script = ExtResource("1_wfo4w")
 
 [node name="ColorRect2" type="ColorRect" parent="." unique_id=1293515390]
+visible = false
 layout_mode = 0
 offset_left = 650.0
 offset_top = 729.0
@@ -21,6 +40,7 @@ offset_bottom = 972.0
 color = Color(0, 0, 0, 0.74509805)
 
 [node name="ColorRect" type="ColorRect" parent="." unique_id=726745443]
+visible = false
 layout_mode = 0
 offset_left = 640.0
 offset_top = 721.0
@@ -29,6 +49,7 @@ offset_bottom = 981.0
 color = Color(0.73432535, 0.75891423, 0.77184945, 0.1882353)
 
 [node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=765338735]
+visible = false
 layout_mode = 0
 offset_left = 640.0
 offset_top = 670.0
@@ -50,6 +71,31 @@ one_shot = true
 
 [node name="DialogueDisappear" type="Timer" parent="." unique_id=914500793]
 wait_time = 5.0
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=276360426]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -429.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_constants/margin_bottom = 64
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer" unique_id=1388080644]
+layout_mode = 2
+theme_override_constants/margin_left = 100
+theme_override_constants/margin_right = 100
+
+[node name="Label" type="Label" parent="MarginContainer/MarginContainer" unique_id=1240736646]
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_jxftp")
+text = "Seppolan teppolat is quite a lot of text here so the test the label I have included very too long description"
+label_settings = ExtResource("2_jaiep")
+horizontal_alignment = 1
+vertical_alignment = 2
+autowrap_mode = 3
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
 [connection signal="timeout" from="DialogueDisappear" to="." method="_on_dialogue_disappear_timeout"]

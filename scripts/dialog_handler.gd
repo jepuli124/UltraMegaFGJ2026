@@ -1,7 +1,8 @@
 extends Control
 
 @export var dialogText = ""
-@onready var textBox := $VBoxContainer/Label
+#@onready var textBox := $VBoxContainer/Label
+@onready var textBox := $MarginContainer/MarginContainer/Label
 @onready var timer := $Timer
 @onready var dialog_timer := $DialogueDisappear
 

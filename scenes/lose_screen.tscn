@@ -1,5 +1,6 @@
 [gd_scene format=3 uid="uid://dmg26rs5gyvvd"]
 
+[ext_resource type="LabelSettings" uid="uid://pqehoa30ecs8" path="res://scripts/lose_label_settings.tres" id="1_1n1m7"]
 [ext_resource type="Script" uid="uid://cg8ef4fmhbui2" path="res://scripts/start_over_button.gd" id="1_uglf1"]
 
 [node name="LoseScreen" type="Control" unique_id=1057381468]
@@ -19,18 +20,21 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0.3779188, 0.37791887, 0.37791884, 1)
 
-[node name="RichTextLabel" type="RichTextLabel" parent="." unique_id=2072885107]
+[node name="Label" type="Label" parent="." unique_id=1793681523]
 layout_mode = 1
 anchors_preset = 10
 anchor_right = 1.0
-offset_bottom = 389.0
+offset_bottom = 25.0
 grow_horizontal = 2
-theme_override_colors/default_color = Color(0.9607843, 0.06666667, 0, 1)
-theme_override_font_sizes/normal_font_size = 48
-text = "Looks like you failed"
-fit_content = true
+text = "
+
+Looks like you failed
+To identify the correct
+assasins
+
+"
+label_settings = ExtResource("1_1n1m7")
 horizontal_alignment = 1
-vertical_alignment = 1
 
 [node name="Center" type="CenterContainer" parent="." unique_id=1491169975]
 layout_mode = 1
