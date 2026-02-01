@@ -1,6 +1,14 @@
 extends VideoStreamPlayer
 
-const LEVEL_TRANSITION_VIDEO_PATHS = []
+const LEVEL_TRANSITION_VIDEO_PATHS = [
+	"res://assets/videos/placeholder.ogv",
+	"res://assets/videos/placeholder.ogv",
+	"res://assets/videos/placeholder.ogv",
+	"res://assets/videos/placeholder.ogv",
+	"res://assets/videos/placeholder.ogv",
+	"res://assets/videos/placeholder.ogv"
+	
+]
 
 func _ready():
 	self.stream.file = LEVEL_TRANSITION_VIDEO_PATHS[Globals.current_level - 1]
