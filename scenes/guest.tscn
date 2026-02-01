@@ -7,6 +7,33 @@
 [sub_resource type="BoxShape3D" id="BoxShape3D_21oj1"]
 size = Vector3(0.8, 2, 0.1)
 
+[sub_resource type="Animation" id="Animation_xgyym"]
+length = 0.001
+tracks/0/type = "scale_3d"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Body")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = PackedFloat32Array(0, 1, 1, 1, 1)
+
+[sub_resource type="Animation" id="Animation_jsc3r"]
+resource_name = "bob"
+length = 2.0
+tracks/0/type = "scale_3d"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Body")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = PackedFloat32Array(0.033333335, 1, 1, 1, 1, 0.43333334, 1, 1, 0.8, 1, 0.9, 1, 1, 1, 1, 1.4666667, 1, 1, 0.8, 1, 2, 1, 1, 1, 1)
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_xgyym"]
+_data = {
+&"RESET": SubResource("Animation_xgyym"),
+&"bob": SubResource("Animation_jsc3r")
+}
+
 [node name="Guest" type="CharacterBody3D" unique_id=1567947846]
 script = ExtResource("1_my1ra")
 
@@ -19,3 +46,6 @@ texture = ExtResource("4_534k7")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=769915129]
 shape = SubResource("BoxShape3D_21oj1")
+
+[node name="Bobbing" type="AnimationPlayer" parent="." unique_id=415482583]
+libraries/ = SubResource("AnimationLibrary_xgyym")

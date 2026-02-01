@@ -1,5 +1,7 @@
 extends CharacterBody3D
 
+signal clear_dialogue()
+
 const MOUSE_SENS_DIV : int = 1000
 const DOWN_ELEVATION : int = 60
 const UP_ELEVATION : int = 60
@@ -49,7 +51,7 @@ func _interact_reset() -> void:
 	_interaction_target_collider = null
 
 func update_assasin_count(assasins_left) -> void:
-	AssasinsLeft.text = "Assasins Left: " + str(assasins_left) 
+	AssasinsLeft.text = "Uninvited quests left: " + str(assasins_left) 
 
 func _input(event: InputEvent) -> void:
 	if event is InputEventMouseButton:
@@ -82,6 +84,7 @@ func _throw_out(target : Node3D) -> void:
 	reticle_animator.visible = true
 	look_at(target.global_position)
 	InteractionNotify.text = ""
+	clear_dialogue.emit()
 	animated_sprite.play("throw_out")
 	reticle_animator.play("throwoutreticle")
 	target_to_throw = target

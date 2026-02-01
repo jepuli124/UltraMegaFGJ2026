@@ -7,6 +7,8 @@ var _generated_list_of_characters : Array
 var _assasins_left : int = Globals.current_level
 
 @onready var dialog_handler : Control = $DialogHandler
+@onready var Env : Node = $WorldEnvironment
+
 
 const BODY_TEXTURES = [
 	preload("res://assets/Sprites/Character/Female1.png"),
@@ -50,6 +52,12 @@ const MASK_TEXTURES = [
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	_generated_list_of_characters = PuzzleGenerator.generate_puzzle(8, Globals.current_level)
+	$Player.clear_dialogue.connect(_dialog_clear)
+	if Globals.current_level == 1:
+		get_node("WorldEnvironment").environment.background_energy_multiplier = 1.5
+	else:
+		get_node("WorldEnvironment").environment.background_energy_multiplier = 0
+	
 	_set_characters()
 	call_update_assasin_count()
 
@@ -79,6 +87,9 @@ func _set_characters() -> void:
 		
 func _on_guest_request_dialogue(dialog: String) -> void:
 	dialog_handler.change_text(dialog)
+
+func _dialog_clear() -> void:
+	dialog_handler.visible = false
 
 func call_update_assasin_count() -> void:
 	$Player.update_assasin_count(_assasins_left)
