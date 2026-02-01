@@ -51,6 +51,7 @@ const MASK_TEXTURES = [
 func _ready() -> void:
 	_generated_list_of_characters = PuzzleGenerator.generate_puzzle(8, Globals.current_level)
 	_set_characters()
+	call_update_assasin_count()
 
 
 #{
@@ -79,11 +80,18 @@ func _set_characters() -> void:
 func _on_guest_request_dialogue(dialog: String) -> void:
 	dialog_handler.change_text(dialog)
 
+func call_update_assasin_count() -> void:
+	$Player.update_assasin_count(_assasins_left)
+
+
 func _on_guest_guest_thrown_out(is_assasin):
 	if not is_assasin:
 		get_tree().change_scene_to_file("res://scenes/lose_screen.tscn")
 	else:
 		_assasins_left -= 1
+		## NOTE: Ties quite tightly with Player but it should work
+		call_update_assasin_count()
+		
 		if _assasins_left < 1:
 			Globals.current_level += 1
 			if Globals.current_level > 5:

@@ -8,6 +8,30 @@
 [ext_resource type="Texture2D" uid="uid://f6ica2o32de" path="res://assets/Sprites/Gun/Crosshair1.png" id="6_smehm"]
 [ext_resource type="Texture2D" uid="uid://cbg7iulab3h3o" path="res://assets/Sprites/Gun/Crosshair2.png" id="7_ur7pv"]
 [ext_resource type="Texture2D" uid="uid://uchgk24xa6p3" path="res://assets/Sprites/Gun/Crosshair3.png" id="8_y4r1p"]
+[ext_resource type="LabelSettings" uid="uid://ds5wtryhujr60" path="res://scripts/general_label_settings.tres" id="9_ur7pv"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_d2wvv"]
+animations = [{
+"frames": [{
+"duration": 2.0,
+"texture": ExtResource("6_smehm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_smehm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_ur7pv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_ur7pv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_y4r1p")
+}],
+"loop": false,
+"name": &"throwoutreticle",
+"speed": 1.0
+}]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_qlg0r"]
 animations = [{
@@ -37,29 +61,6 @@ animations = [{
 "speed": 1.0
 }]
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_d2wvv"]
-animations = [{
-"frames": [{
-"duration": 2.0,
-"texture": ExtResource("6_smehm")
-}, {
-"duration": 1.0,
-"texture": ExtResource("6_smehm")
-}, {
-"duration": 1.0,
-"texture": ExtResource("7_ur7pv")
-}, {
-"duration": 1.0,
-"texture": ExtResource("7_ur7pv")
-}, {
-"duration": 1.0,
-"texture": ExtResource("8_y4r1p")
-}],
-"loop": false,
-"name": &"throwoutreticle",
-"speed": 1.0
-}]
-
 [node name="Player" type="CharacterBody3D" unique_id=984456956]
 script = ExtResource("1_3vyb7")
 
@@ -70,6 +71,14 @@ target_position = Vector3(0, 0, -10)
 
 [node name="UI" type="Control" parent="." unique_id=626585111]
 layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ReticleCenter" type="Control" parent="UI" unique_id=2045683781]
+layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
@@ -82,7 +91,12 @@ offset_bottom = 20.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="InteractionNotify" type="Label" parent="UI" unique_id=826140585]
+[node name="Reticle" type="AnimatedSprite2D" parent="UI/ReticleCenter" unique_id=1803433980]
+position = Vector2(19, 81)
+sprite_frames = SubResource("SpriteFrames_d2wvv")
+animation = &"throwoutreticle"
+
+[node name="InteractionNotify" type="Label" parent="UI/ReticleCenter" unique_id=826140585]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -90,22 +104,43 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -53.0
-offset_top = -4.0
+offset_top = 140.0
 offset_right = 53.0
-offset_bottom = 19.0
+offset_bottom = 189.0
 grow_horizontal = 2
 grow_vertical = 2
+text = "Seppo"
+label_settings = ExtResource("9_ur7pv")
 
-[node name="ThrowOutAnimation" type="AnimatedSprite2D" parent="UI" unique_id=1612532366]
-position = Vector2(19, 257)
+[node name="Control" type="Control" parent="UI" unique_id=1036830216]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -20.0
+offset_top = -40.0
+offset_right = 20.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="ThrowOutAnimation" type="AnimatedSprite2D" parent="UI/Control" unique_id=1612532366]
+position = Vector2(21, -250)
 scale = Vector2(1.5, 1.5)
 sprite_frames = SubResource("SpriteFrames_qlg0r")
 animation = &"throw_out"
 
-[node name="Reticle" type="AnimatedSprite2D" parent="UI" unique_id=1803433980]
-position = Vector2(27, 25)
-sprite_frames = SubResource("SpriteFrames_d2wvv")
-animation = &"throwoutreticle"
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=1285664064]
+offset_right = 1.0
+offset_bottom = 23.0
+theme_override_constants/margin_left = 64
+theme_override_constants/margin_top = 100
 
-[connection signal="animation_finished" from="UI/ThrowOutAnimation" to="." method="_on_throw_out_animation_animation_finished"]
-[connection signal="animation_finished" from="UI/Reticle" to="." method="_on_reticle_animation_finished"]
+[node name="AssasinsLeft" type="Label" parent="MarginContainer" unique_id=1244308810]
+layout_mode = 2
+text = "Assasins left: "
+label_settings = ExtResource("9_ur7pv")
+
+[connection signal="animation_finished" from="UI/ReticleCenter/Reticle" to="." method="_on_reticle_animation_finished"]
+[connection signal="animation_finished" from="UI/Control/ThrowOutAnimation" to="." method="_on_throw_out_animation_animation_finished"]

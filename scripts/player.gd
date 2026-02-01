@@ -11,11 +11,12 @@ var _is_interact_reset : bool = true
 var _is_throwout_going_on : bool = false
 var _interaction_target_collider : Node3D = null
 @onready var InteractionRay : RayCast3D = $Camera/JustInCaseRayCast
-@onready var InteractionNotify : Control = $UI/InteractionNotify
 @onready var Camera : Camera3D = $Camera
 
-@onready var animated_sprite : AnimatedSprite2D = $UI/ThrowOutAnimation
-@onready var reticle_animator : AnimatedSprite2D = $UI/Reticle
+@onready var AssasinsLeft : Label = $MarginContainer/AssasinsLeft
+@onready var reticle_animator: AnimatedSprite2D = $UI/ReticleCenter/Reticle
+@onready var InteractionNotify: Label = $UI/ReticleCenter/InteractionNotify
+@onready var animated_sprite: AnimatedSprite2D = $UI/Control/ThrowOutAnimation
 
 var target_to_throw : Node3D = null
 
@@ -47,6 +48,8 @@ func _interact_reset() -> void:
 	_is_interact_reset = true
 	_interaction_target_collider = null
 
+func update_assasin_count(assasins_left) -> void:
+	AssasinsLeft.text = "Assasins Left: " + str(assasins_left) 
 
 func _input(event: InputEvent) -> void:
 	if event is InputEventMouseButton:
