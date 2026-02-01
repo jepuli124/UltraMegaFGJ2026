@@ -115,6 +115,12 @@ grow_vertical = 2
 text = "Seppo"
 label_settings = ExtResource("9_ur7pv")
 
+[node name="Line2D" type="Line2D" parent="UI/ReticleCenter" unique_id=1934440702]
+position = Vector2(19.5, 12.5)
+scale = Vector2(2.0833333, 2.0833333)
+points = PackedVector2Array(-5, 0, 0, -5, 5, 0, 0, 5, 0, 0)
+width = 1.0
+
 [node name="Control" type="Control" parent="UI" unique_id=1036830216]
 layout_mode = 1
 anchors_preset = 7
