@@ -9,6 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://cbg7iulab3h3o" path="res://assets/Sprites/Gun/Crosshair2.png" id="7_ur7pv"]
 [ext_resource type="Texture2D" uid="uid://uchgk24xa6p3" path="res://assets/Sprites/Gun/Crosshair3.png" id="8_y4r1p"]
 [ext_resource type="LabelSettings" uid="uid://ds5wtryhujr60" path="res://scripts/general_label_settings.tres" id="9_ur7pv"]
+[ext_resource type="AudioStream" uid="uid://ctw5x23t4rwj6" path="res://storyScripts/boom.mp3" id="10_y4r1p"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_d2wvv"]
 animations = [{
@@ -192,6 +193,9 @@ label_settings = ExtResource("9_ur7pv")
 
 [node name="CamShake" type="AnimationPlayer" parent="." unique_id=2136302884]
 libraries/ = SubResource("AnimationLibrary_d2wvv")
+
+[node name="ThrowAudio" type="AudioStreamPlayer3D" parent="." unique_id=2094127162]
+stream = ExtResource("10_y4r1p")
 
 [connection signal="animation_finished" from="UI/ReticleCenter/Reticle" to="." method="_on_reticle_animation_finished"]
 [connection signal="animation_finished" from="UI/Control/ThrowOutAnimation" to="." method="_on_throw_out_animation_animation_finished"]

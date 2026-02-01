@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://bei1iff35jpi6" path="res://scripts/start_button.gd" id="1_l6cm7"]
 [ext_resource type="Texture2D" uid="uid://bnh8sdyce4lvy" path="res://assets/menu_assets/main_menu_background.png" id="2_ekxnf"]
 [ext_resource type="AudioStream" uid="uid://bre5e3u320tqr" path="res://music/SomeMusic3.1.wav" id="3_bqqt6"]
-[ext_resource type="Script" uid="uid://eusg0v1j83sj" path="res://scripts/menu_audio_stream_player.gd" id="4_wu84c"]
+[ext_resource type="Script" path="res://scripts/menu_audio_stream_player.gd" id="4_wu84c"]
 
 [node name="MainMenu" type="Node3D" unique_id=1714969157]
 
