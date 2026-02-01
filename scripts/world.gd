@@ -64,7 +64,9 @@ func _set_characters() -> void:
 	var i = 0
 	for chr in _generated_list_of_characters:
 		guests[i].dialogue_data = chr
+		## NOTE: Connect signals from "Guest" to "World"
 		guests[i].request_dialogue.connect(_on_guest_request_dialogue)
+		guests[i].guest_thrown_out.connect(_on_guest_guest_thrown_out)
 		guests[i].scale = GUEST_SCALE
 		var guest_children = guests[i].get_children()
 		for child in guest_children:

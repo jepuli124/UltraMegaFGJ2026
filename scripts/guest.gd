@@ -31,8 +31,8 @@ func interact(caller : Node3D) -> void:
 func throw_out() -> void:
 	## TODO: Change mask to a blown head sprite and disable physicsbody
 	set_physics_process(false)
+	$CollisionShape3D.disabled = true
 	visible = false
-	print("emitting")
 	guest_thrown_out.emit(dialogue_data["is_assasin"])
 	
 	

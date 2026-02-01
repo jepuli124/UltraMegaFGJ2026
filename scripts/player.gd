@@ -20,6 +20,9 @@ var _interaction_target_collider : Node3D = null
 var target_to_throw : Node3D = null
 
 func _ready():
+	## Capture mouse cursor:
+	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
+	
 	_mouse_sens_adjusted = Globals.mouse_sensitivity / MOUSE_SENS_DIV
 	animated_sprite.visible = false
 	reticle_animator.visible = false

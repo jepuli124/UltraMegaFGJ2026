@@ -5,7 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://wbl1s5vet4q7" path="res://assets/Sprites/Masks/Mask2.png" id="4_534k7"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_21oj1"]
-size = Vector3(1, 1, 0.1)
+size = Vector3(0.8, 2, 0.1)
 
 [node name="Guest" type="CharacterBody3D" unique_id=1567947846]
 script = ExtResource("1_my1ra")
@@ -14,7 +14,7 @@ script = ExtResource("1_my1ra")
 texture = ExtResource("3_xgyym")
 
 [node name="Mask" type="Sprite3D" parent="Body" unique_id=480274146]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.014067709, -0.1)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0011949837, -0.1)
 texture = ExtResource("4_534k7")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=769915129]
