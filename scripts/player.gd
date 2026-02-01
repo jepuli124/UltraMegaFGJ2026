@@ -19,6 +19,8 @@ var _interaction_target_collider : Node3D = null
 @onready var reticle_animator: AnimatedSprite2D = $UI/ReticleCenter/Reticle
 @onready var InteractionNotify: Label = $UI/ReticleCenter/InteractionNotify
 @onready var animated_sprite: AnimatedSprite2D = $UI/Control/ThrowOutAnimation
+@onready var line_2d: Line2D = $UI/ReticleCenter/Line2D
+
 
 var target_to_throw : Node3D = null
 
@@ -72,16 +74,12 @@ func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("Q") && not _is_interact_reset:
 		_throw_out(_interaction_target_collider)
 
-	if event.is_action_pressed("LMB"):
-		print("Left")
-
-	if event.is_action_pressed("RMB"):
-		print("Right")
-
+## this is quality function that is very much modular
 func _throw_out(target : Node3D) -> void:
 	_is_throwout_going_on = true
 	animated_sprite.visible = true
 	reticle_animator.visible = true
+	line_2d.visible = false
 	look_at(target.global_position)
 	InteractionNotify.text = ""
 	clear_dialogue.emit()
