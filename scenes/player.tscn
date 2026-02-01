@@ -9,6 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://cbg7iulab3h3o" path="res://assets/Sprites/Gun/Crosshair2.png" id="7_ur7pv"]
 [ext_resource type="Texture2D" uid="uid://uchgk24xa6p3" path="res://assets/Sprites/Gun/Crosshair3.png" id="8_y4r1p"]
 [ext_resource type="LabelSettings" uid="uid://ds5wtryhujr60" path="res://scripts/general_label_settings.tres" id="9_ur7pv"]
+[ext_resource type="FontFile" uid="uid://bexqfov2d1m8k" path="res://assets/pixel-game.regular.otf" id="10_d2wvv"]
 [ext_resource type="AudioStream" uid="uid://ctw5x23t4rwj6" path="res://storyScripts/boom.mp3" id="10_y4r1p"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_d2wvv"]
@@ -74,6 +75,13 @@ animations = [{
 "name": &"throw_out",
 "speed": 2.0
 }]
+
+[sub_resource type="LabelSettings" id="LabelSettings_3v2ag"]
+font = ExtResource("10_d2wvv")
+font_size = 32
+font_color = Color(0.70796657, 0.7079665, 0.7079665, 1)
+outline_size = 5
+outline_color = Color(0.18000486, 0.18000486, 0.18000486, 1)
 
 [sub_resource type="Animation" id="Animation_ur7pv"]
 length = 0.001
@@ -179,6 +187,34 @@ position = Vector2(21, -250)
 scale = Vector2(1.5, 1.5)
 sprite_frames = SubResource("SpriteFrames_qlg0r")
 animation = &"final"
+
+[node name="Control2" type="Control" parent="UI" unique_id=1711265610]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -40.0
+offset_bottom = 40.0
+grow_horizontal = 0
+
+[node name="MarginContainer" type="MarginContainer" parent="UI/Control2" unique_id=1341564292]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -243.0
+offset_bottom = 44.0
+grow_horizontal = 0
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+
+[node name="Label" type="Label" parent="UI/Control2/MarginContainer" unique_id=2074690171]
+layout_mode = 2
+text = "# Invited always tell the truth
+# Uninvited always lie
+# Those who travelled 
+     together tell the truth"
+label_settings = SubResource("LabelSettings_3v2ag")
 
 [node name="MarginContainer" type="MarginContainer" parent="." unique_id=1285664064]
 offset_right = 1.0
