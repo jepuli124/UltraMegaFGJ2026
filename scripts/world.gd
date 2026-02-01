@@ -10,7 +10,7 @@ var _assasins_left : int = Globals.current_level
 @onready var Env : Node = $WorldEnvironment
 
 
-const BODY_TEXTURES = [
+var BODY_TEXTURES = [
 	preload("res://assets/Sprites/Character/Female1.png"),
 	preload("res://assets/Sprites/Character/Female2.png"),
 	preload("res://assets/Sprites/Character/Female3.png"),
@@ -71,6 +71,7 @@ func _ready() -> void:
 func _set_characters() -> void:
 	var guests = $Guests.get_children()
 	var i = 0
+	BODY_TEXTURES.shuffle()
 	for chr in _generated_list_of_characters:
 		guests[i].dialogue_data = chr
 		## NOTE: Connect signals from "Guest" to "World"
@@ -80,7 +81,7 @@ func _set_characters() -> void:
 		var guest_children = guests[i].get_children()
 		for child in guest_children:
 			if child is Sprite3D:
-				child.texture = BODY_TEXTURES[randi_range(0, BODY_TEXTURES.size()-1)]
+				child.texture = BODY_TEXTURES[i]
 				child.get_child(0).texture = MASK_TEXTURES[chr["colour"]]
 				
 		i += 1
