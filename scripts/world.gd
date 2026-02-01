@@ -107,6 +107,6 @@ func _on_guest_guest_thrown_out(is_assasin):
 		if _assasins_left < 1:
 			Globals.current_level += 1
 			if Globals.current_level > 5:
-				get_tree().change_scene_to_file("res://scenes/world.tscn")
+				get_tree().change_scene_to_file("res://scenes/level_transition.tscn")
 			else:
-				get_tree().change_scene_to_file("res://scenes/world.tscn")
+				get_tree().change_scene_to_file("res://scenes/level_transition.tscn")
